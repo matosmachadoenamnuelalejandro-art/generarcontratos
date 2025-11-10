@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrato Generado - Sistema Automatizado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>✅ ¡Contrato Generado Exitosamente!</h1>
+        
+        <div class="success-message">
+            📄 El contrato ha sido creado y está listo para descargar.
+        </div>
+
+        <div class="document-info">
+            <h3>📋 Detalles del Contrato Generado</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <strong>👤 Cliente</strong>
+                    {{ datos.nombre }}
+                </div>
+                <div class="detail-item">
+                    <strong>🏢 Empresa</strong>
+                    {{ datos.empresa }}
+                </div>
+                <div class="detail-item">
+                    <strong>⚙️ Servicio</strong>
+                    {{ datos.servicio }}
+                </div>
+                <div class="detail-item">
+                    <strong>💰 Precio</strong>
+                    {{ datos.precio }}
+                </div>
+                <div class="detail-item">
+                    <strong>📅 Fecha</strong>
+                    {{ datos.fecha }}
+                </div>
+                <div class="detail-item">
+                    <strong>📊 Estado</strong>
+                    Generado correctamente
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <a href="{{ url_for('descargar', nombre_archivo=archivo) }}" class="btn">
+                📥 Descargar Contrato Word
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                🔄 Generar Nuevo Contrato
+            </a>
+        </div>
+
+        <div class="next-steps">
+            <h4>📝 Próximos Pasos Recomendados:</h4>
+            <ul>
+                <li><strong>Revisar:</strong> Verifique los términos del contrato</li>
+                <li><strong>Imprimir:</strong> Genere dos copias para firma física</li>
+                <li><strong>Firmar:</strong> Ambas partes deben firmar el documento</li>
+                <li><strong>Archivar:</strong> Guarde una copia digital segura</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

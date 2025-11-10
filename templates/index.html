@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Documentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Generar Nuevo Contrato</h1>
+        <form action="/generar" method="post">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre del cliente" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="empresa" placeholder="Empresa" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="servicio" placeholder="Servicio" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="precio" placeholder="Precio" required>
+            </div>
+            <button type="submit">Generar Documento</button>
+        </form>
+    </div>
+</body>
+</html>
